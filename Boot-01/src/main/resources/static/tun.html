@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>传递参数</title>
+</head>
+<body>
+<!--1.传递数据-->
+<a href="/RequestParam?age=16&inters=basktabll&inters=games">原始的方式传递参数（RequestParam）</a>
+<br>
+<br>
+<a href="/car/MatrixVariable;low=19;brand=bash,djso">矩阵的方式传递数据（MatrixVariable）</a>
+<a href="/car/1;age=78/2;age=39">传递数据2（MatrixVariable）</a>
+<br>
+<a href="/car/1;age=7/2;age=883">这是作用域</a>
+
+<!--2.处理请求-->
+<form action="/saver" method="post">
+    姓名：<input type="text" name="userName" value="张三"/><br>
+    年龄：<input type="text" name="age" value="14"/><br>
+    生日：<input type="text" name="birth" value="2019/25/12"/><br>
+    宠物姓名：<input type="text" name="pet1.name" value="阿猫"/><br>
+    宠物的年龄：<input type="text" name="pet1.age" value="15"/><br>
+    <button value="提交"></button>
+</form>
+</body>
+</html>

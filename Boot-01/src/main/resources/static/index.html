@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>页面展示</title>
+</head>
+<body>
+<h1>欢迎你进来</h1>
+
+<!--1.复习SpringMVC的提交方式
+      在get和Post的提交方式上，都有明显的方式。但是在delete和put上，需要做出改变
+      表面上看的是post的方式，在from的隐藏表单中，写的是其他的方式-->
+<form action="/user" method="get">
+    <input value="Rest-Get" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input value="Rest-Post" type="submit"/>
+</form>
+
+
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="PUT"/>
+    <input value="Rest-Put" type="submit"/>
+</form>
+<!--在上面一个和下面一个请求的方式不一样，表面上是POST的方式，却在隐藏的是其他的方式,需要在SpringBoot的
+    配置文件中去开启-->
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="DELETE"/>
+    <input value="Rest-Delete" type="submit"/>
+</form>
+<br>
+<br>
+
+
+<!--2.实图层传递参数，控制层接受参数
+      传递数据的时候，实图层直接在从参数后面写，-->
+<a href="/car/59/owner/张三?age=18&inters=basketball&inters=game">传递参数</a>
+<br>
+<br>
+
+
+<!--3.表单提交数据，然后方法接受数据后，在用RequestBody的方式放回到浏览器-->
+<form action="/save" method="post">
+    <!--
+    分析;type是文本框的样子，name是内容的样子，并且名字是打印在浏览器的页面上的
+        应该按照前面汉字名字和后面的name达到一致性，两者缺一不可-->
+    用户名：<input type="text" name="userName"/>
+    密码：<input type="text" name="Email"/>
+    <input type="submit" value="提交"/>
+</form>
+
+<!--4.RequestAttribute的方式获取数据-->
+<a href="/goto">原始的方式获取数据RequestAttribute</a><br>
+<a href="/tun">传递参数（方式不一样）</a>
+<br>
+<a href="/car/MatrixVariable;low=19;brand=sdji;brand=whei">矩阵的方式</a>
+<br>
+<br>
+<br>
+<br>
+
+<!--5.thymeleaf的跳转-->
+<a href="/thymeleaf">thymeleaf的跳转</a>
+
+</body>
+</html>

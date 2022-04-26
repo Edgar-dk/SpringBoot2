@@ -1,0 +1,48 @@
+#一：yaml为属性赋值
+#person:
+#  userName: zhangsan
+#  boss: false
+#  birth: 2019/12/12 20:12:33
+#  age: 18
+#  pet:
+#    name: tomcat
+#    weight: 23.4
+#
+#  #1.数组和集合的表示形式
+#  interests: [篮球,游泳]
+#  animal:
+#    - jerry
+#    - mario
+#  salarys: [3999,4999.98,5999.99]
+#  #2.Map集合简直对的书写方式
+#  score:
+#    english:
+#      first: 30
+#      second: 40
+#      third: 50
+#    math: [131,140,148]
+#    chinese: {first: 128,second: 136}
+#  allPets:
+#    sick:
+#      - {name: tom}
+#      - {name: jerry,weight: 47}
+#    health: [{name: mario,weight: 47}]
+
+#二：静态资源目录（以默认的为主）
+#spring:
+#  #01.给静态资源加上前缀，为了在拦截器的地方，看到次前缀，是可以放行的
+#  mvc:
+#    static-path-pattern: /res/**
+#  #02.更改静态资源目录
+#  web:
+#    resources:
+#      static-locations: classpath:/hehe
+
+#三:开启delete的方式去删除用户（隐藏的方式），尽管在SpringMVC中是不需要开启的，但是却在SpringBoot中
+    #定义了这个，需要开启，才可以使用
+#spring:
+#  mvc:
+#    hiddenmethod:
+#      filter:
+#        enabled: true
+
